@@ -14,31 +14,19 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'My App';
-
-  itemImageUrl="../assets/logo.png"
-
+  itemImageUrl="Belron1.PNG"
   currentItem = 'Television';
-
   items = ['item1', 'item2', 'item3', 'item4'];
-
-  isUnchanged = true;
-
-  expression = 'underline';
 
   actionName='Label Button';
 
   onSale = true;
-
-  classExpression=''
-
-  isActive= true;
-  isVisible=false;
+  isActive=true;
+  isVisible=true;
 
   bgColor='blue'
-  width='100px'
+  width='300px'
   margin='10%'
-
-  styleExpression=''
 
   navClass='underline'
   navStyle = 'font-size: 1.2rem; color: cornflowerblue;';

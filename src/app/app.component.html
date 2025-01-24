@@ -1,3 +1,7 @@
+<app-hello-world></app-hello-world>
+
+<h3>Current customer: {{ currentItem }}</h3>
+
 <app-item-detail [item]="currentItem"></app-item-detail>
 
 <app-item-ouput (newItemEvent)="addItem($event)"></app-item-ouput>
@@ -6,64 +10,63 @@
   <li *ngFor="let item of items">{{item}}</li>
 </ul> 
 
-<!-- 
-
-
-<app-hello-world></app-hello-world>
-
-<h3>Current customer: {{ currentItem }}</h3>
-
-<p>{{ title }}</p>
-<div><img alt="item" src="{{ itemImageUrl }}"></div>
-
+<!--declarations de template-->
 <button type="button" (click)="deleteHero()">Delete Item</button>
-
 <button type="button" (click)="onSave($event)">Save</button>
-<button type="button" *ngFor="let item of items" (click)="deleteItem(item)">{{ item.name }}</button>
 <form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... </form>
 
+<!--Interpolation-->
+<p>{{ title }}</p>
+<img alt="item" src="{{itemImageUrl}}">
 
 <img alt="item" [src]="itemImageUrl">
+<br>
 
-<tr><td [colSpan]="1 + 1">Merged Columns</td></tr> 
+<table border>
+  <tr><td [attr.colspan]="2">Merged Columns</td></tr>
+  <tr><td>Col 1</td><td>Col 2</td></tr> 
+  <tr><td>Col 1</td><td>Col 2</td></tr> 
+</table>
 
-<p [attr.nom-de-l-attribut]="expression"></p>
-
+<br>
 <button type="button" [attr.aria-label]="actionName">{{actionName}} with Aria</button>
 
-<tr><td [attr.colspan]="1 + 1">One-Two</td></tr>
--->
-
+<br>
 <p [attr.title]="undefined"></p>
 <!-- Le titre sera supprimé -->
 
-<!--
+<br>
 <div [class.sale]="onSale"></div>
 
-<div [class]="classExpression"></div>
+<br>
+<div [style.background-color]="bgColor">css de sekou avec dash-case</div>
+<div [style.backgroundColor]="'green'">css de sekou avec camelcase</div>
 
-<div [class]="'class1 class2 class3'"></div>
+<br>
+<div [style.width.px]="width"> width de sekou px</div>
+<div [style.margin.%]="margin"> width de sekou %</div>
 
-<div [class]="{ 'active': isActive, 'hidden': !isVisible }"></div>
-
-<div [class]="['class1', 'class2']"></div>
-
-<div [style.background-color]="bgColor"></div>
-<div [style.backgroundColor]="bgColor"></div>
-
-<div [style.width.px]="width"></div>
-<div [style.margin.%]="margin"></div>
-
-<div [style]="styleExpression"></div>
-
-<div [style]="'width: 100px; height: 50px;'"></div>
-
-<div [style]="{ 'width': '100px', 'backgroundColor': 'blue' }"></div>
+<div [style]="'width: 100px; height: 50px;'"> test width and height string</div>
+<div [style]="{ 'width': '100px', 'backgroundColor': 'blue' }">test width and height with object</div>
 
 <nav [class]="navClass" [style]="navStyle">
-  <a [class.active]="isActive" [style.textDecoration]="linkStyle">Home</a>
-  <a [style.text-decoration]="linkStyle">Login</a>
-</nav>
+  <a [class.active]="isActive" [style.textDecoration]="linkStyle">Home  </a>
+  <a [style.text-decoration]="activeLinkStyle">Login</a>
+</nav> 
+
+<!-- 
+
+
+-->
+
+
+<!--
+
+
+
+
+
+
 
 <input (input)="onInput($event)" />
 
